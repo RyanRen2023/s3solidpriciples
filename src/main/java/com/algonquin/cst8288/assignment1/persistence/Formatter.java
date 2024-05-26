@@ -7,6 +7,7 @@ import com.algonquin.cst8288.assignment1.emoloyee.Employee;
 public interface Formatter {
 	
 	public String format(Employee employee) throws IOException;
+        
 	
 }
 

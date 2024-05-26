@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author renxihai
  */
-public class ContractEmployeeImpl implements ContractEmployeeService {
+public class ContractEmployeeServiceImpl implements ContractEmployeeService {
 
     @Override
     public Date renewalDate() {
@@ -22,8 +22,9 @@ public class ContractEmployeeImpl implements ContractEmployeeService {
     }
 
     @Override
-    public double calculateTotalCompensation(Employee employee) {
-        return employee.getSalary();
-    }
+    public void populateEmployee(Employee employee) {
 
+        ContractEmployee ce = (ContractEmployee) employee;
+        ce.setRenewalDate(renewalDate());
+    }
 }

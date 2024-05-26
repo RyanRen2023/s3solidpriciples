@@ -4,15 +4,27 @@
  */
 package com.algonquin.cst8288.assignment1.emoloyee;
 
+import java.util.Date;
+
 /**
  *
  * @author renxihai
  */
 public class ContractEmployee extends Employee {
 
+    private Date renewalDate;
+
+    public Date getRenewalDate() {
+        return renewalDate;
+    }
+
+    public void setRenewalDate(Date renewalDate) {
+        this.renewalDate = renewalDate;
+    }
+
     @Override
     public String toString() {
-        return "Employee [name=" + this.getName() + ", email=" + this.getEmail() + ", address=" + this.getAddress() + ", salary=" + this.getSalary()
+        return "ContractEmployee  [name=" + this.getName() + ", email=" + this.getEmail() + ", address=" + this.getAddress() + ", salary=" + this.getSalary()
                 + ", renewalDate=" + this.getRenewalDate() + "]";
     }
 }

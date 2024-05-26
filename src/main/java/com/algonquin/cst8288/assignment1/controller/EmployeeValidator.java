@@ -5,6 +5,7 @@
 package com.algonquin.cst8288.assignment1.controller;
 
 import com.algonquin.cst8288.assignment1.emoloyee.Employee;
+import com.algonquin.cst8288.assignment1.emoloyee.PermanentEmployee;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -33,13 +34,14 @@ public class EmployeeValidator {
         if (!isNoSalary(employee.getSalary())) {
             return false;
         }
+        if (employee instanceof PermanentEmployee) {
+            if (!isNoCompensation(((PermanentEmployee)employee).getTotalCompensation())) {
+                return false;
+            }
 
-        if (!isNoCompensation(employee.getTotalCompensation())) {
-            return false;
-        }
-
-        if (!isNoServiceYear(employee.getNumberOfServiceYear())) {
-            return false;
+            if (!isNoServiceYear(((PermanentEmployee)employee).getNumberOfServiceYear())) {
+                return false;
+            }
         }
 
         return true;

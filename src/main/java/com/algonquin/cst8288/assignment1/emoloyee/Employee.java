@@ -1,91 +1,64 @@
 package com.algonquin.cst8288.assignment1.emoloyee;
 
-import java.util.Date;
-
 public class Employee {
 
-	private String name;
-	private String email;
-	private String address;
-	private double salary;
-	private int numberOfServiceYear;
-	private double bonus;
-	private double totalCompensation;
-	private Date renewalDate;
+    private String name;
+    private String email;
+    private String address;
+    private double salary;
 
-	public Employee() {
-		// Default constructor
-	}
+    public Employee() {
+        // Default constructor
+    }
 
-	public String getName() {
-		return name;
-	}
+    public Employee(String name, String email, String address, double salary) {
+        if (salary <= 0) {
+            throw new IllegalArgumentException("Salary should be greater than 0!");
+        }
+        this.name = name;
+        this.email = email;
+        this.address = address;
+        this.salary = salary;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public double getSalary() {
-		return salary;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public void setSalary(double salary) {
-		this.salary = salary;
-	}
+    public double getSalary() {
+        return salary;
+    }
 
-	public int getNumberOfServiceYear() {
-		return numberOfServiceYear;
-	}
+    public void setSalary(double salary) {
+        if (salary <= 0) {
+            throw new IllegalArgumentException("Salary should be greater than 0!");
+        }
+        this.salary = salary;
+    }
 
-	public void setNumberOfServiceYear(int numberOfServiceYear) {
-		this.numberOfServiceYear = numberOfServiceYear;
-	}
-
-	public double getBonus() {
-		return bonus;
-	}
-
-	public void setBonus(double bonus) {
-		this.bonus = bonus;
-	}
-
-	public double getTotalCompensation() {
-		return totalCompensation;
-	}
-
-	public void setTotalCompensation(double totalCompensation) {
-		this.totalCompensation = totalCompensation;
-	}
-
-	public Date getRenewalDate() {
-		return renewalDate;
-	}
-
-	public void setRenewalDate(Date renewalDate) {
-		this.renewalDate = renewalDate;
-	}
-
-	@Override
-	public String toString() {
-		return "Employee [name=" + name + ", email=" + email + ", address=" + address + ", salary=" + salary
-				+ ", numberOfServiceYear=" + numberOfServiceYear + ", bonus=" + bonus + ", totalCompensation="
-				+ totalCompensation + ", renewalDate=" + renewalDate + "]";
-	}
+    @Override
+    public String toString() {
+        return "Employee [name=" + name + ", email=" + email + ", address=" + address + ", salary=" + salary + "]";
+    }
 
 }
