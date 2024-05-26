@@ -1,6 +1,9 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Student Name: Xihai Ren
+ * Student No: 041127486
+ * Professor: George Kriger
+ * Due Date: 2024/06/02
+ * Description: Assignment 1
  */
 package com.algonquin.cst8288.assignment1.emoloyee;
 
@@ -8,19 +11,48 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
+ * Implementation of the {@link ContractEmployeeService} interface.
+ * <p>
+ * This class provides the implementation of methods to handle contract
+ * employees, including calculating the renewal date and populating employee
+ * data.
+ * </p>
  *
- * @author renxihai
+ * @see ContractEmployeeService
+ * @see Employee
+ * @see ContractEmployee
+ *
+ * @version 1.0.0
+ * @since Oracle 17.0.11
+ *
+ * @author Xihai Ren
  */
 public class ContractEmployeeServiceImpl implements ContractEmployeeService {
 
+    /**
+     * Calculates the renewal date for a contract employee.
+     * <p>
+     * Renewal date is calculated as 1 year from today.
+     * </p>
+     *
+     * @return the renewal date, which is 1 year from today
+     */
     @Override
     public Date renewalDate() {
-//        f. Renewal date is only applicable for Contract Employees and is calculated 1 year from today.
+        //f. Renewal date is only applicable for Contract Employees and is calculated 1 year from today.
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.YEAR, 1);
         return calendar.getTime();
     }
 
+    /**
+     * Populates the given contract employee with required data.
+     * <p>
+     * This method sets the renewal date for the contract employee.
+     * </p>
+     *
+     * @param employee the employee to populate
+     */
     @Override
     public void populateEmployee(Employee employee) {
 

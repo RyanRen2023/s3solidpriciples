@@ -1,15 +1,39 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Student Name: Xihai Ren
+ * Student No: 041127486
+ * Professor: George Kriger
+ * Due Date: 2024/06/02
+ * Description: Assignment 1
  */
 package com.algonquin.cst8288.assignment1.emoloyee;
 
 /**
+ * Factory class to create appropriate EmployeeService instances.
+ * <p>
+ * This class provides a method to create instances of {@link EmployeeService}
+ * based on the type of employee.
+ * </p>
  *
- * @author renxihai
+ * @see EmployeeService
+ * @see PermanentEmployeeServiceImpl
+ * @see ContractEmployeeServiceImpl
+ * @see Employee
+ *
+ * @version 1.0.0
+ * @since Oracle 17.0.11
+ *
+ * @author Xihai Ren
  */
 public class EmployeeServiceFactory {
 
+    /**
+     * Creates an instance of {@link EmployeeService} based on the type of
+     * employee.
+     *
+     * @param employee the employee for which the service needs to be created
+     * @return an instance of EmployeeService if the employee type is
+     * recognized, null otherwise
+     */
     public static EmployeeService createService(Employee employee) {
         if (employee instanceof PermanentEmployee) {
             return new PermanentEmployeeServiceImpl();
@@ -20,4 +44,3 @@ public class EmployeeServiceFactory {
     }
 
 }
-
