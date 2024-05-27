@@ -48,11 +48,10 @@ public class Main {
         PermanentEmployee pEmployee = new PermanentEmployee("PermanentEmployee", "pEmployee@gmail.com", "8700 woodroffe", 100000.0, 5);
         System.out.println(pEmployee.toString());
 
-        ContractEmployee cEmployee = new ContractEmployee();
+        ContractEmployee cEmployee = new ContractEmployee("ContractEmployee","pEmployee@gmail.com","8700 woodroffe",100000.0);
         cEmployee.setName("ContractEmployee");
         cEmployee.setEmail("pEmployee@gmail.com");
         cEmployee.setAddress("8700 woodroffe");
-        cEmployee.setSalary(100000.0);
         System.out.println(cEmployee.toString());
 
         // populate data in save as JSON and Text.

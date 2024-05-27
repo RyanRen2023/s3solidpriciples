@@ -31,6 +31,18 @@ public class ContractEmployee extends Employee {
     private Date renewalDate;
 
     /**
+     * Constructs a new ContractEmployee with the specified details.
+     *
+     * @param name the name of the employee
+     * @param email the email of the employee
+     * @param address the address of the employee
+     * @param salary the salary of the employee
+     */
+    public ContractEmployee(String name, String email, String address, double salary) {
+        super(name, email, address, salary);
+    }
+
+    /**
      * Gets the renewal date of the contract employee.
      *
      * @return the renewal date of the contract employee

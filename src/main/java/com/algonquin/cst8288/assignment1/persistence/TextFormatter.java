@@ -1,3 +1,10 @@
+/*
+ * Student Name: Xihai Ren
+ * Student No: 041127486
+ * Professor: George Kriger
+ * Due Date: 2024/06/02
+ * Description: Assignment 1
+ */
 package com.algonquin.cst8288.assignment1.persistence;
 
 import com.algonquin.cst8288.assignment1.emoloyee.ContractEmployee;
@@ -6,13 +13,19 @@ import com.algonquin.cst8288.assignment1.emoloyee.PermanentEmployee;
 import java.io.IOException;
 import java.util.Date;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 /**
+ * An implementation for formatting the data in a text format.
+ * <p>
+ * This class provides methods to convert Employee objects into a formatted string representation.
+ * </p>
  *
- * @author renxihai
+ * @see Formatter
+ * @see Employee
+ *
+ * @version 1.0.0
+ * @since Oracle 17.0.11
+ * 
+ * @author Xihai Ren
  */
 public class TextFormatter implements Formatter {
 

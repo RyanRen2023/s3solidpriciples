@@ -45,8 +45,7 @@ public class PermanentEmployeeServiceImpl implements PermanentEmployeeService {
         if (employee == null) {
             return 0.0;
         }
-        PermanentEmployee pe = (PermanentEmployee) employee;
-        return pe.getSalary() + pe.getBonus();
+        return employee.getSalary() + this.calculateBonus(employee);
     }
 
     /**

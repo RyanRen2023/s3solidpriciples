@@ -55,7 +55,9 @@ public class ContractEmployeeServiceImpl implements ContractEmployeeService {
      */
     @Override
     public void populateEmployee(Employee employee) {
-
+        if(employee == null){
+            throw new IllegalArgumentException("Employee should not be null!");
+        }
         ContractEmployee ce = (ContractEmployee) employee;
         ce.setRenewalDate(renewalDate());
     }
