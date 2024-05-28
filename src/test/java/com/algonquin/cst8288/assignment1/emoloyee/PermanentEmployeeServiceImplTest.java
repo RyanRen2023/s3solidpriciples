@@ -49,9 +49,6 @@ public class PermanentEmployeeServiceImplTest {
 
     /**
      * Initializes the test class.
-     * <p>
-     * This method is called once before any of the test methods in the class.
-     * </p>
      */
     @BeforeClass
     public static void setUpClass() {
@@ -60,9 +57,6 @@ public class PermanentEmployeeServiceImplTest {
 
     /**
      * Cleans up after all tests have run.
-     * <p>
-     * This method is called once after all of the test methods in the class.
-     * </p>
      */
     @AfterClass
     public static void tearDownClass() {
@@ -71,9 +65,6 @@ public class PermanentEmployeeServiceImplTest {
 
     /**
      * Sets up the test environment.
-     * <p>
-     * This method is called before each test method.
-     * </p>
      */
     @Before
     public void setUp() {

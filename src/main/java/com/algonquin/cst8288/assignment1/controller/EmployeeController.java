@@ -37,13 +37,35 @@ import com.algonquin.cst8288.assignment1.persistence.PersistenceService;
  *
  * @author Xihai Ren
  */
-
 public class EmployeeController {
 
+    /**
+     * Validator for employee data.
+     */
     private EmployeeValidator employeeValidator = new EmployeeValidator();
-
+    /**
+     * Service for persisting employee data.
+     */
     private PersistenceService persistenceService = new PersistenceService();
 
+    /**
+     * Processes the given employee's data, validates it, and saves it in JSON
+     * and text formats.
+     * <p>
+     * This method performs the following steps:
+     * <ul>
+     * <li>Calculates additional attributes such as bonus, total compensation,
+     * pension contribution, and renewal date.</li>
+     * <li>Validates the employee data.</li>
+     * <li>Saves the validated data in JSON and text formats.</li>
+     * </ul>
+     * </p>
+     *
+     * @param employee the employee whose data is to be processed
+     * @return "SUCCESS" if the data is processed and saved successfully,
+     * otherwise "FAILED"
+     * @throws IOException if an I/O error occurs during data saving
+     */
     public String processEmployee(Employee employee) throws IOException {
 
         // Process data

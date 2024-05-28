@@ -46,13 +46,13 @@ public class Main {
         // Do the same thing to output the data to the console instead of saving it to a file.
         System.out.println("Begin to run main class");
         PermanentEmployee pEmployee = new PermanentEmployee("PermanentEmployee", "pEmployee@gmail.com", "8700 woodroffe", 100000.0, 5);
-        System.out.println(pEmployee.toString());
+//        System.out.println(pEmployee.toString());
 
         ContractEmployee cEmployee = new ContractEmployee("ContractEmployee","pEmployee@gmail.com","8700 woodroffe",100000.0);
         cEmployee.setName("ContractEmployee");
         cEmployee.setEmail("pEmployee@gmail.com");
         cEmployee.setAddress("8700 woodroffe");
-        System.out.println(cEmployee.toString());
+//        System.out.println(cEmployee.toString());
 
         // populate data in save as JSON and Text.
         EmployeeController employeeController = new EmployeeController();

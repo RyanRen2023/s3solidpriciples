@@ -34,7 +34,7 @@ public class JSONFormatter implements Formatter {
      /**
      * Converts the given Employee object to its JSON representation.
      *
-     * @param employee the employee object to format
+     * @param person the employee object to format
      * @return the JSON representation of the employee object
      * @throws IOException if an error occurs during JSON processing
      */

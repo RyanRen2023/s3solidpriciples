@@ -31,9 +31,7 @@ public class ContractEmployeeServiceImpl implements ContractEmployeeService {
 
     /**
      * Calculates the renewal date for a contract employee.
-     * <p>
-     * Renewal date is calculated as 1 year from today.
-     * </p>
+     *
      *
      * @return the renewal date, which is 1 year from today
      */
@@ -47,15 +45,12 @@ public class ContractEmployeeServiceImpl implements ContractEmployeeService {
 
     /**
      * Populates the given contract employee with required data.
-     * <p>
-     * This method sets the renewal date for the contract employee.
-     * </p>
      *
      * @param employee the employee to populate
      */
     @Override
     public void populateEmployee(Employee employee) {
-        if(employee == null){
+        if (employee == null) {
             throw new IllegalArgumentException("Employee should not be null!");
         }
         ContractEmployee ce = (ContractEmployee) employee;

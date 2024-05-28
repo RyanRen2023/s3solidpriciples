@@ -30,9 +30,7 @@ public class PermanentEmployeeServiceImpl implements PermanentEmployeeService {
 
     /**
      * Calculates the total compensation for the given permanent employee.
-     * <p>
-     * Total compensation is calculated as salary + bonus.
-     * </p>
+     *
      *
      * @param employee the employee for whom the total compensation is to be
      * calculated
@@ -50,9 +48,7 @@ public class PermanentEmployeeServiceImpl implements PermanentEmployeeService {
 
     /**
      * Calculates the pension contribution for the given permanent employee.
-     * <p>
-     * Pension contribution is 1% of base salary.
-     * </p>
+     *
      *
      * @param employee the employee for whom the pension contribution is to be
      * calculated
@@ -71,10 +67,7 @@ public class PermanentEmployeeServiceImpl implements PermanentEmployeeService {
 
     /**
      * Calculates the bonus for the given permanent employee.
-     * <p>
-     * Bonus is 2.5% of base salary and calculated by multiplying by the years
-     * of service.
-     * </p>
+     *
      *
      * @param employee the employee for whom the bonus is to be calculated
      * @return the bonus for the employee, or 0.0 if the employee is null
@@ -92,10 +85,7 @@ public class PermanentEmployeeServiceImpl implements PermanentEmployeeService {
 
     /**
      * Populates the given permanent employee with required data.
-     * <p>
-     * This method sets the bonus and total compensation for the permanent
-     * employee.
-     * </p>
+     *
      *
      * @param employee the employee to populate
      * @throws IllegalArgumentException if the employee is null
