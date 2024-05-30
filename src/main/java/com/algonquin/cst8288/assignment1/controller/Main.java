@@ -8,7 +8,9 @@
 package com.algonquin.cst8288.assignment1.controller;
 
 import com.algonquin.cst8288.assignment1.emoloyee.ContractEmployee;
+import com.algonquin.cst8288.assignment1.emoloyee.EmployeeServiceFactory;
 import com.algonquin.cst8288.assignment1.emoloyee.PermanentEmployee;
+import com.algonquin.cst8288.assignment1.persistence.PersistenceService;
 import java.io.IOException;
 
 /**
@@ -46,16 +48,16 @@ public class Main {
         // Do the same thing to output the data to the console instead of saving it to a file.
         System.out.println("Begin to run main class");
         PermanentEmployee pEmployee = new PermanentEmployee("PermanentEmployee", "pEmployee@gmail.com", "8700 woodroffe", 100000.0, 5);
-//        System.out.println(pEmployee.toString());
+        ContractEmployee cEmployee = new ContractEmployee("ContractEmployee", "pEmployee@gmail.com", "8700 woodroffe", 100000.0);
 
-        ContractEmployee cEmployee = new ContractEmployee("ContractEmployee","pEmployee@gmail.com","8700 woodroffe",100000.0);
-        cEmployee.setName("ContractEmployee");
-        cEmployee.setEmail("pEmployee@gmail.com");
-        cEmployee.setAddress("8700 woodroffe");
-//        System.out.println(cEmployee.toString());
+        // initiate employeeController
+        EmployeeValidator employeeValidator = new EmployeeValidator();
+        PersistenceService persistenceService = new PersistenceService();
+        EmployeeServiceFactory employeeServiceFactory = new EmployeeServiceFactory();
+        EmployeeFormatter employeeFormatter = new EmployeeFormatter();
+        EmployeeController employeeController = new EmployeeController(employeeValidator, persistenceService, employeeServiceFactory, employeeFormatter);
 
         // populate data in save as JSON and Text.
-        EmployeeController employeeController = new EmployeeController();
         employeeController.processEmployee(pEmployee);
         employeeController.processEmployee(cEmployee);
 

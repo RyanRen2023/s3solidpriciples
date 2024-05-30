@@ -45,6 +45,7 @@ public class PersistenceServiceTest {
      * The instance of PersistenceService used for testing.
      */
     static PersistenceService instance;
+    static EmployeeServiceFactory employeeServiceFactory;
 
     /**
      * Default constructor for the test class.
@@ -58,6 +59,7 @@ public class PersistenceServiceTest {
     @BeforeClass
     public static void setUpClass() {
         instance = new PersistenceService();
+        employeeServiceFactory = new EmployeeServiceFactory();
     }
 
     /**
@@ -66,6 +68,7 @@ public class PersistenceServiceTest {
     @AfterClass
     public static void tearDownClass() {
         instance = null;
+        employeeServiceFactory = null;
     }
 
     /**
@@ -90,7 +93,7 @@ public class PersistenceServiceTest {
         System.out.println("Save Permanent Employee to Json");
 
         PermanentEmployee person = new PermanentEmployee("pTest1", "pTest1@gmail.com", "pTest1 address", 100000, 3);
-        EmployeeService service = EmployeeServiceFactory.createService(person);
+        EmployeeService service = employeeServiceFactory.createService(person);
         service.populateEmployee(person);
 
         String filename = "test_json_pEmployee_data.txt";
@@ -111,7 +114,7 @@ public class PersistenceServiceTest {
         System.out.println("saveEmployee");
 
         PermanentEmployee person = new PermanentEmployee("pTest1", "pTest1@gmail.com", "pTest1 address", 100000, 3);
-        EmployeeService service = EmployeeServiceFactory.createService(person);
+        EmployeeService service = employeeServiceFactory.createService(person);
         service.populateEmployee(person);
 
         String filename = "test_text_pEmployee_data.txt";
@@ -133,7 +136,7 @@ public class PersistenceServiceTest {
         System.out.println("Save Contract Employee to Json");
 
         ContractEmployee person = new ContractEmployee("cTest1", "cTest1@gmail.com", "cTest1 address", 100000);
-        EmployeeService service = EmployeeServiceFactory.createService(person);
+        EmployeeService service = employeeServiceFactory.createService(person);
         service.populateEmployee(person);
 
         String filename = "test_json_cEmployee_data.txt";
@@ -155,7 +158,7 @@ public class PersistenceServiceTest {
         System.out.println("saveEmployee");
 
         ContractEmployee person = new ContractEmployee("cTest1", "cTest1@gmail.com", "cTest1 address", 100000);
-        EmployeeService service = EmployeeServiceFactory.createService(person);
+        EmployeeService service = employeeServiceFactory.createService(person);
         service.populateEmployee(person);
         String filename = "test_text_cEmployee_data.txt";
         Formatter formatter = new TextFormatter();

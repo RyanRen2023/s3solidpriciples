@@ -42,11 +42,38 @@ public class EmployeeController {
     /**
      * Validator for employee data.
      */
-    private EmployeeValidator employeeValidator = new EmployeeValidator();
+    private EmployeeValidator employeeValidator;
     /**
      * Service for persisting employee data.
      */
-    private PersistenceService persistenceService = new PersistenceService();
+    private PersistenceService persistenceService;
+
+    /**
+     * Factory for provide appropriate employee service.
+     */
+    EmployeeServiceFactory employeeServiceFactory;
+    
+    /**
+     * Service for formatting employee data.
+     */
+    EmployeeFormatter employeeFormatter;
+
+    /**
+     * Constructs a new EmployeeController with the specified details.
+     *
+     *
+     * @param employeeValidator the employee validator
+     * @param persistenceService the persistence service
+     * @param employeeServiceFactory the employee service factory
+     * @param employeeFormatter the employee formatter
+     *
+     */
+    public EmployeeController(EmployeeValidator employeeValidator, PersistenceService persistenceService, EmployeeServiceFactory employeeServiceFactory, EmployeeFormatter employeeFormatter) {
+        this.employeeValidator = employeeValidator;
+        this.persistenceService = persistenceService;
+        this.employeeServiceFactory = employeeServiceFactory;
+        this.employeeFormatter = employeeFormatter;
+    }
 
     /**
      * Processes the given employee's data, validates it, and saves it in JSON
@@ -74,7 +101,7 @@ public class EmployeeController {
         // pension contribution, 
         // renewal date etc.
         // Validate data
-        EmployeeService employeeService = EmployeeServiceFactory.createService(employee);
+        EmployeeService employeeService = employeeServiceFactory.createService(employee);
         if (employeeService != null) {
             employeeService.populateEmployee(employee);
         }
@@ -82,7 +109,7 @@ public class EmployeeController {
         if (!employeeValidator.isValidEmployee(employee)) {
             return "FALIED";
         }
-        EmployeeFormatter.formatString(employee);
+        employeeFormatter.formatString(employee);
 
         // Store data
         persistenceService.saveEmployee(employee, "json_employee_data.txt", new JSONFormatter());

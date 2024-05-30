@@ -30,6 +30,6 @@ public interface ContractEmployeeService extends EmployeeService {
      *
      * @return the renewal date for the contract employee
      */
-    public Date renewalDate();
+        public Date renewalDate();
 
 }

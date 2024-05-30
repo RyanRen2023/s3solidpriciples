@@ -34,7 +34,7 @@ public class EmployeeServiceFactory {
      * @return an instance of EmployeeService if the employee type is
      * recognized, null otherwise
      */
-    public static EmployeeService createService(Employee employee) {
+    public EmployeeService createService(Employee employee) {
         if (employee instanceof PermanentEmployee) {
             return new PermanentEmployeeServiceImpl();
         } else if (employee instanceof ContractEmployee) {

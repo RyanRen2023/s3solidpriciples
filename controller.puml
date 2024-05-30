@@ -1,0 +1,108 @@
+@startuml
+package controller {
+  class Rate{
+    +{static} final double BONUS_PERCENTAGE =  0.025;  
+    +{static} final double PENSION_PERCENTAGE = 0.01;
+  }
+  class EmployeeController{
+    -  EmployeeValidator employeeValidator  
+    -  PersistenceService persistenceService
+    -  EmployeeServiceFactory employeeServiceFactory
+    -  EmployeeFormatter employeeFormatter
+    +  EmployeeController(EmployeeValidator employeeValidator, PersistenceService persistenceService, EmployeeServiceFactory employeeServiceFactory, EmployeeFormatter employeeFormatter)
+    +  processEmployee(Employee employee):String
+}
+
+  class EmployeeFormatter{
+    + formatString(Employee employee):void
+    + {static} trim(String str):String
+  }
+  class EmployeeValidator{
+    + boolean isValidEmployee(Employee employee) 
+    - boolean isPresent(String value)
+    - boolean isValidAlphaNumeric(String value) 
+    - boolean isValidEmail(String value) 
+    - boolean isNoSalary(double salary) 
+    - boolean isNoCompensation(double compensation) 
+    - boolean isNoServiceYear(int serviceYear) 
+
+  }
+  class Main{
+    + {static}  main(String[] args):void    
+  }
+}
+
+package employee {
+  class Employee{ 
+    - String name
+    - String email
+    - String address
+    - double salary
+    + Employee()	
+    + Employee(String name, String email, String address, double salary) 
+    + String getName()
+    + void setName(String name)
+    + String getEmail()
+    + void setEmail(String email)
+    + String getAddress() 
+    + void setAddress(String address)
+    + double getSalary()
+    + void setSalary(double salary)
+    + String toString()
+  }
+  class EmployeeServiceFactory{
+    + createService(employee:Employee):EmployeeService
+  }
+  interface EmployeeService{
+    + void populateEmployee(Employee employee)
+  }
+  interface PermanentEmployeeService{
+    + double calculateTotalCompensation(Employee employee)
+    + double pensionContribution(Employee employee)
+    + double calculateBonus(Employee employee)
+  }
+  class PermanentEmployeeServiceImpl{
+    + double calculateTotalCompensation(Employee employee) 
+    + double pensionContribution(Employee employee)
+    + double calculateBonus(Employee employee)
+    + void populateEmployee(Employee employee)
+  }
+}
+
+package persistence {
+  interface Formatter{
+    + String format(Employee employee)
+  }
+  class PersistenceService{
+    + void saveEmployee(Employee person, String filename, Formatter formatter) 
+  }
+}
+
+' Relationship in persistence
+PersistenceService ..> Formatter
+
+' Relationship in employee
+EmployeeServiceFactory ..> EmployeeService
+'Employee <.. EmployeeServiceFactory
+Employee <. EmployeeServiceFactory
+Employee <. EmployeeService
+
+
+PermanentEmployeeService -|> EmployeeService
+PermanentEmployeeServiceImpl ..|> PermanentEmployeeService
+
+
+' Relationship in controller
+Main ..> EmployeeController
+
+EmployeeController ..> EmployeeValidator
+EmployeeController ..> EmployeeFormatter
+EmployeeController ..> EmployeeServiceFactory
+EmployeeController ..> Employee
+EmployeeValidator ..> Employee
+EmployeeFormatter ..> Employee
+EmployeeController ..> PersistenceService
+
+Rate <-- PermanentEmployeeServiceImpl
+
+@enduml

@@ -1,0 +1,48 @@
+@startuml
+
+package employee{
+    class Employee{ 
+        - String name
+        - String email
+        - String address
+        - double salary
+        + Employee()	
+        + Employee(String name, String email, String address, double salary) 
+        + String getName()
+        + void setName(String name)
+        + String getEmail()
+        + void setEmail(String email)
+        + String getAddress() 
+        + void setAddress(String address)
+        + double getSalary()
+        + void setSalary(double salary)
+        + String toString()
+    }
+}
+
+
+package persistence{
+    interface Formatter{
+        + String format(Employee employee)
+    }
+    class JSONFormatter{
+        + String format(Employee employee)
+    }
+    class TextFormatter{
+        + String format(Employee employee)
+    }
+    class PersistenceService{
+        + void saveEmployee(Employee person, String filename, Formatter formatter) 
+    }
+}
+
+' relationship in persistence
+PersistenceService .> Formatter
+PersistenceService .> Employee
+Formatter .> Employee
+Formatter <|.. JSONFormatter
+Formatter <|.. TextFormatter
+
+
+
+@enduml

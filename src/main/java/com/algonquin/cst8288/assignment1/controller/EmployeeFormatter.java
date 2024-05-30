@@ -29,7 +29,7 @@ public class EmployeeFormatter {
      *
      * @param employee the employee whose attributes will be formatted
      */
-    public static void formatString(Employee employee) {
+    public void formatString(Employee employee) {
         if (employee != null) {
             employee.setName(trim(employee.getName()));
             employee.setEmail(trim(employee.getEmail().trim()));

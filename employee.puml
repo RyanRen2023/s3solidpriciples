@@ -1,0 +1,98 @@
+@startuml
+package controller{
+    class Rate{
+      +{static} final double BONUS_PERCENTAGE =  0.025;  
+      +{static} final double PENSION_PERCENTAGE = 0.01;
+    }
+}
+package employee{
+    class Employee{ 
+        - String name
+        - String email
+        - String address
+        - double salary
+        + Employee()	
+        + Employee(String name, String email, String address, double salary) 
+        + String getName()
+        + void setName(String name)
+        + String getEmail()
+        + void setEmail(String email)
+        + String getAddress() 
+        + void setAddress(String address)
+        + double getSalary()
+        + void setSalary(double salary)
+        + String toString()
+    }
+    class ContractEmployee{
+        - Date renewalDate;
+        + Date getRenewalDate()
+        + void setRenewalDate(Date renewalDate)
+        + String toString()
+    }
+   
+       
+    class PermanentEmployee{
+        - int numberOfServiceYear;
+        - double bonus;
+        - double totalCompensation;
+        + PermanentEmployee(String name, String email, String address, double salary, int numberOfServiceYear)
+        + double getBonus()
+        + void setBonus(double bonus)
+        + double getTotalCompensation()
+        + void setTotalCompensation(double totalCompensation)
+        + int getNumberOfServiceYear()
+        + void setNumberOfServiceYear(int numberOfServiceYear)
+        + String toString()
+    }
+   
+    interface ContractEmployeeService{
+        + Date renewalDate()
+    }
+    class ContractEmployeeServiceImpl{
+        + Date renewalDate()
+        + void populateEmployee(Employee employee)
+    }
+    interface EmployeeService{
+        + void populateEmployee(Employee employee)
+    }
+    interface PermanentEmployeeService{
+        + double calculateTotalCompensation(Employee employee)
+        + double pensionContribution(Employee employee)
+        + double calculateBonus(Employee employee)
+    }
+
+    class PermanentEmployeeServiceImpl{
+        + double calculateTotalCompensation(Employee employee)
+        + double pensionContribution(Employee employee)
+        + double calculateBonus(Employee employee)
+        + void populateEmployee(Employee employee)
+    }
+    class EmployeeServiceFactory{
+        + createService(employee:Employee):EmployeeService
+    } 
+}
+
+
+'class java.util.Calendar
+'class java.util.Date
+'annotation java.lang.Override
+
+
+' ralationship under employee
+EmployeeServiceFactory .> EmployeeService
+EmployeeServiceFactory ..> Employee
+
+EmployeeService ..> Employee
+
+Employee <|-- ContractEmployee
+Employee <|-- PermanentEmployee
+
+EmployeeService <|-- ContractEmployeeService
+EmployeeService <|-- PermanentEmployeeService
+
+PermanentEmployeeService <|.. PermanentEmployeeServiceImpl
+ContractEmployeeService <|.. ContractEmployeeServiceImpl
+
+PermanentEmployeeServiceImpl ..> Rate
+
+@enduml
