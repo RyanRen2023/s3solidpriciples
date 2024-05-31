@@ -7,11 +7,11 @@
  */
 package com.algonquin.cst8288.assignment1.persistence;
 
-import com.algonquin.cst8288.assignment1.emoloyee.ContractEmployee;
-import com.algonquin.cst8288.assignment1.emoloyee.Employee;
-import com.algonquin.cst8288.assignment1.emoloyee.EmployeeService;
-import com.algonquin.cst8288.assignment1.emoloyee.EmployeeServiceFactory;
-import com.algonquin.cst8288.assignment1.emoloyee.PermanentEmployee;
+import com.algonquin.cst8288.assignment1.employee.ContractEmployee;
+import com.algonquin.cst8288.assignment1.employee.Employee;
+import com.algonquin.cst8288.assignment1.employee.EmployeeService;
+import com.algonquin.cst8288.assignment1.employee.EmployeeServiceFactory;
+import com.algonquin.cst8288.assignment1.employee.PermanentEmployee;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;

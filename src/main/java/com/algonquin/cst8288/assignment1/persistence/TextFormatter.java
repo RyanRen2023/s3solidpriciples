@@ -7,9 +7,9 @@
  */
 package com.algonquin.cst8288.assignment1.persistence;
 
-import com.algonquin.cst8288.assignment1.emoloyee.ContractEmployee;
-import com.algonquin.cst8288.assignment1.emoloyee.Employee;
-import com.algonquin.cst8288.assignment1.emoloyee.PermanentEmployee;
+import com.algonquin.cst8288.assignment1.employee.ContractEmployee;
+import com.algonquin.cst8288.assignment1.employee.Employee;
+import com.algonquin.cst8288.assignment1.employee.PermanentEmployee;
 import java.io.IOException;
 import java.util.Date;
 

@@ -7,7 +7,7 @@
  */
 package com.algonquin.cst8288.assignment1.controller;
 
-import com.algonquin.cst8288.assignment1.emoloyee.Employee;
+import com.algonquin.cst8288.assignment1.employee.Employee;
 
 /**
  * Provides utility methods for formatting employee string data.

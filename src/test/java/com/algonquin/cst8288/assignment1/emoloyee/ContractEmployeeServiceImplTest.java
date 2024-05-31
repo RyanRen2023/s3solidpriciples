@@ -7,7 +7,10 @@
  */
 package com.algonquin.cst8288.assignment1.emoloyee;
 
+import com.algonquin.cst8288.assignment1.employee.ContractEmployee;
+import com.algonquin.cst8288.assignment1.employee.ContractEmployeeServiceImpl;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -77,8 +80,11 @@ public class ContractEmployeeServiceImplTest {
      */
     @Before
     public void setUp() {
-        employee = new ContractEmployee("ContractTest1", "ContractTest1@gmail.com", "Ottawa,Canada", 120000);
-        expResult = "2025-05-26";
+        employee = new ContractEmployee("ContractTest1", "ContractTest1@gmail.com", "Ottawa,Canada", 120000);  
+        Calendar c= Calendar.getInstance();
+        c.add(Calendar.YEAR, 1);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        expResult = sdf.format(c.getTime());
     }
 
     /**
@@ -88,6 +94,7 @@ public class ContractEmployeeServiceImplTest {
     @After
     public void tearDown() {
         employee = null;
+        expResult = null;
     }
 
     /**

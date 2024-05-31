@@ -7,7 +7,7 @@
  */
 package com.algonquin.cst8288.assignment1.persistence;
 
-import com.algonquin.cst8288.assignment1.emoloyee.Employee;
+import com.algonquin.cst8288.assignment1.employee.Employee;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;

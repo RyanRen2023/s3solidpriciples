@@ -5,7 +5,7 @@
  * Due Date: 2024/06/02
  * Description: Assignment 1
  */
-package com.algonquin.cst8288.assignment1.emoloyee;
+package com.algonquin.cst8288.assignment1.employee;
 
 /**
  * Represents a permanent employee with a fixed salary, a bonus, and a number of

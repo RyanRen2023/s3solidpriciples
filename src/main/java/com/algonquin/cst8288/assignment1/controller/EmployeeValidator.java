@@ -7,8 +7,8 @@
  */
 package com.algonquin.cst8288.assignment1.controller;
 
-import com.algonquin.cst8288.assignment1.emoloyee.Employee;
-import com.algonquin.cst8288.assignment1.emoloyee.PermanentEmployee;
+import com.algonquin.cst8288.assignment1.employee.Employee;
+import com.algonquin.cst8288.assignment1.employee.PermanentEmployee;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

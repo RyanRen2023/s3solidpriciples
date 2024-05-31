@@ -7,6 +7,8 @@
  */
 package com.algonquin.cst8288.assignment1.emoloyee;
 
+import com.algonquin.cst8288.assignment1.employee.PermanentEmployeeServiceImpl;
+import com.algonquin.cst8288.assignment1.employee.PermanentEmployee;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Test;

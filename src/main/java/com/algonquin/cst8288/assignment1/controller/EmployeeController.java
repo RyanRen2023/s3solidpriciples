@@ -9,9 +9,9 @@ package com.algonquin.cst8288.assignment1.controller;
 
 import java.io.IOException;
 
-import com.algonquin.cst8288.assignment1.emoloyee.Employee;
-import com.algonquin.cst8288.assignment1.emoloyee.EmployeeService;
-import com.algonquin.cst8288.assignment1.emoloyee.EmployeeServiceFactory;
+import com.algonquin.cst8288.assignment1.employee.Employee;
+import com.algonquin.cst8288.assignment1.employee.EmployeeService;
+import com.algonquin.cst8288.assignment1.employee.EmployeeServiceFactory;
 import com.algonquin.cst8288.assignment1.persistence.TextFormatter;
 import com.algonquin.cst8288.assignment1.persistence.JSONFormatter;
 import com.algonquin.cst8288.assignment1.persistence.PersistenceService;
@@ -52,7 +52,7 @@ public class EmployeeController {
      * Factory for provide appropriate employee service.
      */
     EmployeeServiceFactory employeeServiceFactory;
-    
+
     /**
      * Service for formatting employee data.
      */

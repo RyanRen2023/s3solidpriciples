@@ -7,9 +7,9 @@
  */
 package com.algonquin.cst8288.assignment1.controller;
 
-import com.algonquin.cst8288.assignment1.emoloyee.ContractEmployee;
-import com.algonquin.cst8288.assignment1.emoloyee.EmployeeServiceFactory;
-import com.algonquin.cst8288.assignment1.emoloyee.PermanentEmployee;
+import com.algonquin.cst8288.assignment1.employee.ContractEmployee;
+import com.algonquin.cst8288.assignment1.employee.EmployeeServiceFactory;
+import com.algonquin.cst8288.assignment1.employee.PermanentEmployee;
 import com.algonquin.cst8288.assignment1.persistence.PersistenceService;
 import java.io.IOException;
 
